@@ -22,7 +22,7 @@ const AdminOrders = () => {
 
   const getAllOrders = async () => {
     try {
-      const { data } = await axios.get(`/api/v1/auth/get-admin-orders`);
+      const { data } = await axios.get(`${process.env.REACT_APP_API}/api/v1/auth/get-admin-orders`);
       setOrders(data);
     } catch (error) {
       console.log(error);
@@ -34,7 +34,7 @@ const AdminOrders = () => {
 
   const handleStatusChange = async (orderId, value) => {
     try {
-      const { data } = await axios.put(`/api/v1/auth/order-status/${orderId}`, {
+      const { data } = await axios.put(`${process.env.REACT_APP_API}/api/v1/auth/order-status/${orderId}`, {
         status: value,
       });
       getAllOrders();
