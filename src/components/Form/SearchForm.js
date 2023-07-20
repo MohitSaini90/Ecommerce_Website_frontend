@@ -11,7 +11,7 @@ const SearchForm = () => {
     e.preventDefault();
     try {
       const { data } = await axios.get(
-        `/api/v1/products/search-product/${search.keyword}`
+        `${process.env.REACT_APP_API}/api/v1/products/search-product/${search.keyword}`
       );
       setSearch({ ...search, results: data });
       navigate("/search");
