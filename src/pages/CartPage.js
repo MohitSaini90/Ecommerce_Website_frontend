@@ -38,7 +38,7 @@ const CartPage = () => {
   const handlePlaceOrder = async () => {
     try {
       const buyerID = auth?.user?._id;
-      const res = await axios.post(`/api/v1/products/place-order`, {
+      const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/products/place-order`, {
         cart,
         buyerID,
       });
@@ -76,7 +76,7 @@ const CartPage = () => {
                 <div className="col-md-4">
                   <img
                     className="card-img-top"
-                    src={`/api/v1/products/product-photo/${p._id}`}
+                    src={`${process.env.REACT_APP_API}/api/v1/products/product-photo/${p._id}`}
                     alt={p.name}
                   />
                 </div>
