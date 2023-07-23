@@ -12,7 +12,7 @@ const VerifyPhone = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/auth/generateOTP`, {
+      const res = await axios.post(`/api/v1/auth/generateOTP`, {
         phone,
       });
       if (res?.data?.success === false) toast.error(res?.data?.message);
