@@ -5,13 +5,10 @@ const AdminMenu = () => {
   return (
     <>
       <div className="text-center">
-        <div>
-          <h1>Admin Panel</h1>
-        </div>
         <div className="list-group">
           <NavLink
             to="/dashboard/admin/create-category"
-            className="list-group-item list-group-item-action"
+            className="list-group-item list-group-item-action list-group-item-primary"
           >
             Create Category
           </NavLink>
@@ -23,19 +20,19 @@ const AdminMenu = () => {
           </NavLink>
           <NavLink
             to="/dashboard/admin/products"
-            className="list-group-item list-group-item-action list-group-item-secondary"
+            className="list-group-item list-group-item-action list-group-item-primary"
           >
             Products
           </NavLink>
           <NavLink
             to="/dashboard/admin/orders"
-            className="list-group-item list-group-item-action list-group-item-secondary"
+            className="list-group-item list-group-item-action list-group-item-primary"
           >
             Orders
           </NavLink>
           <NavLink
             to="/dashboard/admin/profile"
-            className="list-group-item list-group-item-action list-group-item-secondary"
+            className="list-group-item list-group-item-action list-group-item-primary"
           >
             Profile
           </NavLink>
