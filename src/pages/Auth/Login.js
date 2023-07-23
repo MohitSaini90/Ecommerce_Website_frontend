@@ -79,7 +79,7 @@ const Login = () => {
           <div class="row mb-4">
      
           <div class="col">
-          <!-- Simple link -->
+       
           <Link  to={"/forgot-password"}>
             Forgot Password?
           </Link>
