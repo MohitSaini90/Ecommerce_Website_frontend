@@ -47,7 +47,7 @@ const Login = () => {
     <>
       <Layout>
         <form onSubmit={handleSubmit}>
-          <div className="mb-3">
+          <div className="form-outline mb-4">
             <label htmlFor="email" className="form-label">
               Email Address
             </label>
@@ -61,7 +61,7 @@ const Login = () => {
               required
             />
           </div>
-          <div className="mb-3">
+          <div className="form-outline mb-4">
             <label htmlFor="password" className="form-label">
               Password
             </label>
@@ -75,15 +75,25 @@ const Login = () => {
               required
             />
           </div>
-          <button type="submit" className="btn btn-primary">
-            Login
-          </button>
-          <Link className="btn btn-primary" to={"/forgot-password"}>
-            Forgot Password
+
+          <div class="row mb-4">
+     
+          <div class="col">
+          <!-- Simple link -->
+          <Link  to={"/forgot-password"}>
+            Forgot Password?
           </Link>
-          <Link className="btn btn-primary" to={"/verify-email"}>
+                <Link  to={"/verify-email"}>
             Verify Email
           </Link>
+    </div>
+  </div>
+                
+          <button type="submit" className="btn btn-primary btn-block">
+            Login
+          </button>
+   
+          
         </form>
       </Layout>
     </>
