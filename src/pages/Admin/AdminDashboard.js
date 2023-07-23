@@ -6,7 +6,7 @@ const AdminDashboard = () => {
   const [auth, setAuth] = useContext(AuthContext);
   return (
     <>
-      <Layout>
+      <Layout title={"Dashboard"}>
         <div className="container-fluid m-3 pd-3">
           <div className="row">
             <div className="col-md-3">
