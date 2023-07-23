@@ -6,6 +6,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../context/auth";
 import { Link } from "react-router-dom";
+import "../../styles/authStyles.css";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
