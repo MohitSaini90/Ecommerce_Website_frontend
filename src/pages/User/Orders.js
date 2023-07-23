@@ -21,14 +21,14 @@ const Orders = () => {
   }, [auth?.token]);
   return (
     <>
-      <Layout title={"User- Orders"}>
+      <Layout title={"My- Orders"}>
         <div className="container-flui p-3 m-3">
           <div className="row">
             <div className="col-md-3">
               <UserMenu></UserMenu>
             </div>
             <div className="col-md-9">
-              <h1>All Orders</h1>
+              <h3>Order history</h3>
               {orders?.map((o, i) => {
                 return (
                   <div className="border shadow">
