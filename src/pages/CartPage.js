@@ -85,7 +85,7 @@ const CartPage = () => {
                       <td style={{ border: "none" }}>
                         <img
                           className="card-img-top"
-                          src={`/api/v1/products/product-photo/${p._id}`}
+                          src={`${process.env.REACT_APP_API}/api/v1/products/product-photo/${p._id}`}
                           alt={p.name}
                           style={{ width: "200px", height: "200px" }}
                         />
