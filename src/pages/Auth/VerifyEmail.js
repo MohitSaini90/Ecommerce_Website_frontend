@@ -24,28 +24,34 @@ const VerifyEmail = () => {
   };
   return (
     <Layout>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">
-            Email Address
-          </label>
-          <input
-            type="email"
-            className="form-control"
-            id="email"
-            name="email"
-            value={email}
-            onChange={handleEmailChange}
-            required
-          />
+      <div className="outer-container">
+        <div className="form-container">
+          <form onSubmit={handleSubmit}>
+            <div className="form-outline mb-4">
+              <label htmlFor="email" className="form-label">
+                Email Address
+              </label>
+              <input
+                type="email"
+                className="form-control"
+                id="email"
+                name="email"
+                value={email}
+                onChange={handleEmailChange}
+                required
+              />
+            </div>
+            <div className="row mb-4">
+              <div className="col">
+                <Link to={"/login"}>Login?</Link>
+              </div>
+            </div>
+            <button type="submit" className="btn btn-primary btn-block">
+              Verify Email
+            </button>
+          </form>
         </div>
-        <button type="submit" className="btn btn-primary">
-          Verify Email
-        </button>
-        <Link type="submit" className="btn btn-primary" to={"/login"}>
-          Login
-        </Link>
-      </form>
+      </div>
     </Layout>
   );
 };
