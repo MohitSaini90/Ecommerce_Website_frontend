@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import axios from "axios";
+import "../../styles/authStyles.css";
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
   const handleEmailChange = (e) => {
@@ -23,29 +24,35 @@ const ForgotPassword = () => {
     }
   };
   return (
-    <Layout>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">
-            Email Address
-          </label>
-          <input
-            type="email"
-            className="form-control"
-            id="email"
-            name="email"
-            value={email}
-            onChange={handleEmailChange}
-            required
-          />
+   <Layout>
+      <div className="outer-container">
+        <div className="form-container">
+          <form onSubmit={handleSubmit}>
+            <div className="form-outline mb-4">
+              <label htmlFor="email" className="form-label">
+                Email Address
+              </label>
+              <input
+                type="email"
+                className="form-control"
+                id="email"
+                name="email"
+                value={email}
+                onChange={handleEmailChange}
+                required
+              />
+            </div>
+            <div className="row mb-4">
+              <div className="col">
+                <Link to={"/login"}>Login?</Link>
+              </div>
+            </div>
+            <button type="submit" className="btn btn-primary btn-block">
+              Reset Password
+            </button>
+          </form>
         </div>
-        <button type="submit" className="btn btn-primary">
-          Reset Password
-        </button>
-        <Link type="submit" className="btn btn-primary" to={"/login"}>
-          Login
-        </Link>
-      </form>
+      </div>
     </Layout>
   );
 };
