@@ -3,7 +3,7 @@ import Layout from "../../components/layout/Layout";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -30,7 +30,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/auth/register`, {
+      const res = await axios.post(`/api/v1/auth/register`, {
         name,
         email,
         password,
@@ -64,88 +64,84 @@ const Register = () => {
   return (
     <>
       <Layout>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label htmlFor="FirstName" className="form-label">
-              Name
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="Name"
-              name="Name"
-              value={name}
-              onChange={handleNameChange}
-              required
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="email" className="form-label">
-              Email Address
-            </label>
-            <input
-              type="email"
-              className="form-control"
-              id="email"
-              name="email"
-              value={email}
-              onChange={handleEmailChange}
-              required
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="password" className="form-label">
-              Password
-            </label>
-            <input
-              type="password"
-              className="form-control"
-              id="password"
-              name="password"
-              value={password}
-              onChange={handlePasswordChange}
-              required
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="address" className="form-label">
-              Address
-            </label>
-            <textarea
-              className="form-control"
-              id="address"
-              name="address"
-              value={address}
-              onChange={handleAddressChange}
-              required
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="phone" className="form-label">
-              Phone Number
-            </label>
-            <input
-              type="tel"
-              className="form-control"
-              id="phone"
-              name="phone"
-              value={phone}
-              onChange={handlePhoneChange}
-              required
-            />
-          </div>
-          <button type="submit" className="btn btn-primary">
-            SignUp
-          </button>
-        </form>
+        <div className="outer-container">
+          <div className="form-container">
+            <form onSubmit={handleSubmit}>
+              <label htmlFor="FirstName" className="form-label">
+                Name
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="Name"
+                name="Name"
+                value={name}
+                onChange={handleNameChange}
+                required
+              />
 
-        <button
-          type="submit"
-          className="btn btn-primary"
-          onClick={handleClickLogIn}
-        >
-          LogIn
-        </button>
+              <label htmlFor="email" className="form-label">
+                Email Address
+              </label>
+              <input
+                type="email"
+                className="form-control"
+                id="email"
+                name="email"
+                value={email}
+                onChange={handleEmailChange}
+                required
+              />
+
+              <label htmlFor="password" className="form-label">
+                Password
+              </label>
+              <input
+                type="password"
+                className="form-control"
+                id="password"
+                name="password"
+                value={password}
+                onChange={handlePasswordChange}
+                required
+              />
+
+              <label htmlFor="address" className="form-label">
+                Address
+              </label>
+              <textarea
+                className="form-control"
+                id="address"
+                name="address"
+                value={address}
+                onChange={handleAddressChange}
+                required
+              />
+
+              <label htmlFor="phone" className="form-label">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                className="form-control"
+                id="phone"
+                name="phone"
+                value={phone}
+                onChange={handlePhoneChange}
+                required
+              />
+
+              <div className="row mb-4">
+                <div className="col">
+                  <Link to={"/login"}>Login?</Link>
+                </div>
+              </div>
+              <button type="submit" className="btn btn-primary btn-block">
+                Register
+              </button>
+            </form>
+          </div>
+        </div>
       </Layout>
     </>
   );
