@@ -64,85 +64,87 @@ const AdminProfile = () => {
 
   return (
     <>
-      <Layout title={"User- Profile"}>
+      <Layout title={"My-Profile"}>
         <div className="container-flui p-3 m-3">
           <div className="row">
             <div className="col-md-3">
               <AdminMenu></AdminMenu>
             </div>
             <div className="col-md-9">
-              <h1>Your Profile</h1>
-              <div>
-                <form onSubmit={handleSubmit}>
-                  <div className="mb-3">
-                    <label htmlFor="FirstName" className="form-label">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="Name"
-                      name="Name"
-                      value={name}
-                      onChange={handleNameChange}
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label htmlFor="email" className="form-label">
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      className="form-control"
-                      id="email"
-                      name="email"
-                      value={email}
-                      onChange={handleEmailChange}
-                      disabled
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label htmlFor="password" className="form-label">
-                      Password
-                    </label>
-                    <input
-                      type="password"
-                      className="form-control"
-                      id="password"
-                      name="password"
-                      value={password}
-                      onChange={handlePasswordChange}
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label htmlFor="address" className="form-label">
-                      Address
-                    </label>
-                    <textarea
-                      className="form-control"
-                      id="address"
-                      name="address"
-                      value={address}
-                      onChange={handleAddressChange}
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label htmlFor="phone" className="form-label">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      className="form-control"
-                      id="phone"
-                      name="phone"
-                      value={phone}
-                      onChange={handlePhoneChange}
-                    />
-                  </div>
-                  <button type="submit" className="btn btn-primary">
-                    Update
-                  </button>
-                </form>
+              <div className="card w-7 p-3">
+                <h1>Your Profile</h1>
+                <div>
+                  <form onSubmit={handleSubmit}>
+                    <div className="mb-3">
+                      <label htmlFor="FirstName" className="form-label">
+                        Name
+                      </label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="Name"
+                        name="Name"
+                        value={name}
+                        onChange={handleNameChange}
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label htmlFor="email" className="form-label">
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        className="form-control"
+                        id="email"
+                        name="email"
+                        value={email}
+                        onChange={handleEmailChange}
+                        disabled
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label htmlFor="password" className="form-label">
+                        Password
+                      </label>
+                      <input
+                        type="password"
+                        className="form-control"
+                        id="password"
+                        name="password"
+                        value={password}
+                        onChange={handlePasswordChange}
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label htmlFor="address" className="form-label">
+                        Address
+                      </label>
+                      <textarea
+                        className="form-control"
+                        id="address"
+                        name="address"
+                        value={address}
+                        onChange={handleAddressChange}
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label htmlFor="phone" className="form-label">
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        className="form-control"
+                        id="phone"
+                        name="phone"
+                        value={phone}
+                        onChange={handlePhoneChange}
+                      />
+                    </div>
+                    <button type="submit" className="btn btn-primary">
+                      Update
+                    </button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
