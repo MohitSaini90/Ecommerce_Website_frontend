@@ -1,0 +1,15 @@
+.card-container {
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 10px;
+    /* Add border-radius to make the edges curved */
+    padding: 10px;
+}
+
+.product-card {
+    flex: 0 0 50%;
+    /* This will make each product card take 50% of the container width */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
