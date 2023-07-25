@@ -1,0 +1,27 @@
+#categoryCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    /* Set a fixed height for the card */
+    /* You can adjust the value to control the card's height */
+    position: relative;
+    margin-bottom: 20px;
+    /* Adjust the value to control the gap between cards */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+#categorycard-body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#card-title {
+    text-transform: capitalize;
+    color: white;
+}
