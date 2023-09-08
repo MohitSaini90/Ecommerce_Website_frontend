@@ -57,7 +57,7 @@ const SingleProduct = () => {
           >
             <img
               className="card-img-top"
-              src={`/api/v1/products/product-photo/${product._id}`}
+              src={`${process.env.REACT_APP_API}/api/v1/products/product-photo/${product._id}`}
               alt={product.name}
               style={{ height: "400px", width: "400px" }}
             />
