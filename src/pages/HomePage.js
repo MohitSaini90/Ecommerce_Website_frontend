@@ -34,6 +34,18 @@ const HomePage = () => {
     getTotal();
   }, []);
 
+  const shuffleArray = (array) => {
+    const shuffledArray = [...array];
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [
+        shuffledArray[j],
+        shuffledArray[i],
+      ];
+    }
+    return shuffledArray;
+  };
+  
   //get products
   const getAllProducts = async () => {
     try {
@@ -41,7 +53,7 @@ const HomePage = () => {
       const { data } = await axios.get(`${process.env.REACT_APP_API}/api/v1/products/product-list/${page}`);
       setLoading(false);
       if (data?.success) {
-        setProducts(data?.products);
+        setProducts(shuffleArray(data?.products));
       }
     } catch (error) {
       setLoading(true);
