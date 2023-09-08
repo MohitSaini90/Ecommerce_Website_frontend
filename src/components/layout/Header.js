@@ -41,15 +41,15 @@ const Header = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <li className="nav-item">
-              <SearchForm />
-            </li>
+        
         <div
           className="collapse navbar-collapse justify-content-center"
           id="navbarNavDropdown"
         >
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-            
+            <li className="nav-item">
+              <SearchForm />
+            </li>
             <li className="nav-item">
               <Link
                 className="nav-link common-link"
