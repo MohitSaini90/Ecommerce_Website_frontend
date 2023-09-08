@@ -34,11 +34,12 @@ const CategoryProducts = () => {
           <div className="d-flex flex-wrap">
             {products?.map((p) => (
               <div key={p._id}>
-                <div className="card m-2" style={{ width: "18rem" }}>
+                <div className="card m-2" style={{ width: "20rem" }}>
                   <img
                     className="card-img-top"
                     src={`${process.env.REACT_APP_API}/api/v1/products/product-photo/${p._id}`}
                     alt={p.name}
+ style={{ width: "20rem", height: "500px" }}
                   />
                   <div className="card-body">
                     <h5 className="card-title">{p.name}</h5>
