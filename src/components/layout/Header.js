@@ -29,7 +29,7 @@ const Header = () => {
       >
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            Website
+            Brown Object
           </Link>
           <button
             className="navbar-toggler"
