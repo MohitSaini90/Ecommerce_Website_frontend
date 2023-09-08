@@ -23,7 +23,7 @@ const SearchForm = () => {
   return (
     <>
       <div>
-        <form className="form-inline" onSubmit={handleSubmit}>
+        <form className="form-inline" role="search" onSubmit={handleSubmit}>
           <input
             className="form-control mr-sm-2"
             type="search"
