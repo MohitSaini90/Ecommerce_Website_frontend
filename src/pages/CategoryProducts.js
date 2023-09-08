@@ -27,7 +27,7 @@ const CategoryProducts = () => {
   return (
     <Layout>
       <div className="container">
-        <h1>Hello</h1>
+        
         <h4>{category?.name}</h4>
         <h5>{products?.length} results found</h5>
         <div className="row">
