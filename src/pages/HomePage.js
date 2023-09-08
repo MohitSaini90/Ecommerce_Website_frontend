@@ -151,7 +151,7 @@ const HomePage = () => {
           </div>
         </div>
         <div className="col-md-9">
-          <h1 className="text-center">All products</h1>
+          
           <div className="d-flex flex-wrap">
             {products?.map((p) => (
               <div key={p._id}>
