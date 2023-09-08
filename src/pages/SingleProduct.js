@@ -35,7 +35,7 @@ const SingleProduct = () => {
   };
 
   return (
-    <Layout>
+  <Layout>
       <div
         style={{
           display: "flex",
