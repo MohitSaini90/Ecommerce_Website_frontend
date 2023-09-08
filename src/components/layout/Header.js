@@ -30,6 +30,7 @@ const Header = () => {
           style={{
             color: "#FFFFFF",
             fontStyle: "italic",
+            paddingLeft:"5px",
           }}
         >
           Brown Object
