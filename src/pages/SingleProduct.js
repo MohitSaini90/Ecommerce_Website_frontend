@@ -1,11 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Layout from "../components/layout/Layout";
 import axios from "axios";
+import { toast } from "react-hot-toast";
 import { useParams } from "react-router-dom";
+import { CartContext } from "../context/cart";
+import { useNavigate } from "react-router-dom";
 const SingleProduct = () => {
   const params = useParams();
   const [product, setProduct] = useState({});
   const [relatedProducts, setRelatedProducts] = useState([]);
+  const [cart, setCart] = useContext(CartContext);
+  const navigate = useNavigate();
   //get product
   const getProduct = async () => {
     try {
@@ -80,7 +85,20 @@ const SingleProduct = () => {
               <h6>Category:{product?.category?.name}</h6>
               <h6>Price:₹{product?.price}</h6>
               <h6>Quantity:{product?.quantity}</h6>
-              <button className="btn btn-primary ms-1">Add to cart</button>
+             <button
+                className="btn btn-primary ms-1"
+                onClick={() => {
+                  setCart([...cart, product]);
+                  localStorage.setItem(
+                    "cart",
+                    JSON.stringify([...cart, product])
+                  );
+
+                  toast.success("Successfully added to cart!!");
+                }}
+              >
+                Add to cart
+              </button>
             </div>
           </div>
         </div>
@@ -109,7 +127,28 @@ const SingleProduct = () => {
                   </p>
                   <p className="card-text">₹{p.price}</p>
 
-                  <button className="btn btn-primary ms-1">Add to cart</button>
+                  <button
+                    className="btn btn-primary ms-1"
+                    onClick={() => {
+                      navigate(`/product/${p.slug}`);
+                    }}
+                  >
+                    More details
+                  </button>
+                  <button
+                    className="btn btn-primary ms-1"
+                    onClick={() => {
+                      setCart([...cart, p]);
+                      localStorage.setItem(
+                        "cart",
+                        JSON.stringify([...cart, p])
+                      );
+
+                      toast.success("Successfully added to cart!!");
+                    }}
+                  >
+                    Add to cart
+                  </button>
                 </div>
               </div>
             </div>
