@@ -27,37 +27,44 @@ const Header = () => {
         className="navbar navbar-expand-lg bg-body-tertiary bg-dark text-center text-white"
         id="navBar"
       >
-        <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
-            Brown Object
-          </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-              <SearchForm></SearchForm>
-              <li className="nav-item">
-                <Link
-                  className="nav-link active"
-                  aria-current="page"
-                  to="/"
-                  id="home"
-                >
-                  Home
-                </Link>
-              </li>
+        <Link className="navbar-brand" to="/">
+          Brown Object
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          className="collapse navbar-collapse justify-content-center"
+          id="navbarNavDropdown"
+        >
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <SearchForm />
+            </li>
+            <li className="nav-item">
+              <Link
+                className="nav-link common-link"
+                aria-current="page"
+                to="/"
+                id="home"
+              >
+                Home
+              </Link>
+            </li>
+
+            <li className="nav-item">
               <div className="dropdown">
                 <Link
-                  className="nav-link dropdown-toggle"
+                  className="nav-link common-link dropdown-toggle"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                   role="button"
@@ -70,14 +77,17 @@ const Header = () => {
                   aria-labelledby="dropdownMenuButton"
                 >
                   <li>
-                    <Link className="dropdown-item" to={`/categories`}>
+                    <Link
+                      className="dropdown-item common-link"
+                      to={`/categories`}
+                    >
                       All categories
                     </Link>
                   </li>
                   {categories?.map((c) => (
                     <li key={c._id}>
                       <Link
-                        className="dropdown-item"
+                        className="dropdown-item common-link"
                         to={`/category/${c.slug}`}
                       >
                         {c.name}
@@ -86,68 +96,81 @@ const Header = () => {
                   ))}
                 </ul>
               </div>
-
-              <li className="nav-item">
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link common-link">
                 <Badge count={cart?.length} showZero>
-                  <Link className="nav-link" to="/cart" id="features">
+                  <Link
+                    className="nav-link common-link"
+                    to="/cart"
+                    id="features"
+                  >
                     Cart
                   </Link>
                 </Badge>
-              </li>
-              {!auth.user ? (
-                <>
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/register" id="features">
-                      SignUp
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/login" id="features">
-                      Login
-                    </Link>
-                  </li>
-                </>
-              ) : (
-                <>
-                  <div className="dropdown">
-                    <button
-                      className="btn btn-primary dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      {auth?.user?.name}
-                    </button>
-                    <ul
-                      className="dropdown-menu"
-                      aria-labelledby="dropdownMenuButton"
-                    >
-                      <li>
-                        <Link
-                          className="dropdown-item"
-                          to={`/dashboard/${
-                            auth?.user?.role === 1 ? "admin" : "user"
-                          }`}
-                        >
-                          Dashboard
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          className="dropdown-item"
-                          to="/login"
-                          onClick={handleOnClickLogout}
-                        >
-                          Logout
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </>
-              )}
-            </ul>
-          </div>
+              </Link>
+            </li>
+            {!auth.user ? (
+              <>
+                <li className="nav-item">
+                  <Link
+                    className="nav-link common-link"
+                    to="/register"
+                    id="features"
+                  >
+                    SignUp
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    className="nav-link common-link"
+                    to="/login"
+                    id="features"
+                  >
+                    Login
+                  </Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <div className="dropdown" style={{ marginLeft: "10px" }}>
+                  <button
+                    className="btn btn-primary common-link dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    {auth?.user?.name}
+                  </button>
+                  <ul
+                    className="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton"
+                  >
+                    <li>
+                      <Link
+                        className="dropdown-item common-link"
+                        to={`/dashboard/${
+                          auth?.user?.role === 1 ? "admin" : "user"
+                        }`}
+                      >
+                        Dashboard
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="dropdown-item common-link"
+                        to="/login"
+                        onClick={handleOnClickLogout}
+                      >
+                        Logout
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </>
+            )}
+          </ul>
         </div>
       </nav>
     </>
