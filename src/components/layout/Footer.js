@@ -2,7 +2,15 @@ import React, { useEffect, useState } from "react";
 
 const Footer = () => {
   const [isFooterFixed, setIsFooterFixed] = useState(false);
+  const [renderCount, setRenderCount] = useState(0);
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setRenderCount(renderCount + 1);
+    }, 10000);
+
+    return () => clearTimeout(timeout); // Clean up the timeout on component unmount
+  }, [renderCount]);
   useEffect(() => {
     const handleResize = () => {
       if (document.body.scrollHeight > window.innerHeight) {
