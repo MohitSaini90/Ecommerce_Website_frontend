@@ -23,11 +23,15 @@ const Header = () => {
 
   return (
     <>
-      <nav
-        className="navbar navbar-expand-lg bg-body-tertiary bg-dark text-center text-white"
-        id="navBar"
-      >
-        <Link className="navbar-brand" to="/">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark" id="navBar">
+        <Link
+          className="navbar-brand"
+          to="/"
+          style={{
+            color: "#FFFFFF",
+            fontStyle: "italic",
+          }}
+        >
           Brown Object
         </Link>
         <button
@@ -41,7 +45,7 @@ const Header = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        
+
         <div
           className="collapse navbar-collapse justify-content-center"
           id="navbarNavDropdown"
@@ -56,6 +60,7 @@ const Header = () => {
                 aria-current="page"
                 to="/"
                 id="home"
+                style={{ color: "#FFFFFF" }}
               >
                 Home
               </Link>
@@ -68,6 +73,7 @@ const Header = () => {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                   role="button"
+                  style={{ color: "#FFFFFF" }}
                 >
                   Categories
                 </Link>
@@ -104,6 +110,7 @@ const Header = () => {
                     className="nav-link common-link"
                     to="/cart"
                     id="features"
+                    style={{ color: "#FFFFFF" }}
                   >
                     Cart
                   </Link>
@@ -117,6 +124,7 @@ const Header = () => {
                     className="nav-link common-link"
                     to="/register"
                     id="features"
+                    style={{ color: "#FFFFFF" }}
                   >
                     SignUp
                   </Link>
@@ -126,6 +134,7 @@ const Header = () => {
                     className="nav-link common-link"
                     to="/login"
                     id="features"
+                    style={{ color: "#FFFFFF" }}
                   >
                     Login
                   </Link>
