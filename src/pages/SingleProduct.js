@@ -116,7 +116,7 @@ const SingleProduct = () => {
               <div className="card m-2" style={{ width: "20rem" }}>
                 <img
                   className="card-img-top"
-                  src={`/api/v1/products/product-photo/${p._id}`}
+                  src={`${process.env.REACT_APP_API}/api/v1/products/product-photo/${p._id}`}
                   alt={p.name}
                   style={{ width: "20rem", height: "500px" }}
                 />
